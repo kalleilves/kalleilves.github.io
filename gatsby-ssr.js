@@ -1,7 +1,3 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import wrapRootElementFn from './wrapRootElement';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = wrapRootElementFn;

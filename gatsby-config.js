@@ -1,16 +1,30 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: 'Kalle Ilves',
+    description: 'Kalle Ilves portfolio',
+    author: `@kalleilv`,
+    fullName: 'Kalle Ilves',
+    linkedinUrl: 'https://www.linkedin.com/in/kalleilves',
+    githubUrl: 'https://github.com/Kaltsoon',
+    email: 'kalleilv@gmail.com',
+    intro:
+      'An enthusiastic and talented Full Stack Software Developer currently located in Helsinki Finland. Master of Computer Science from Algorithms, Data analytics, and Machine learning programme.',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    { resolve: `gatsby-transformer-remark` },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
+        name: 'markdown-pages',
       },
     },
     `gatsby-transformer-sharp`,
@@ -27,8 +41,9 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
+    `gatsby-plugin-offline`,
   ],
-}
+};
