@@ -8,7 +8,7 @@ module.exports = {
     githubUrl: 'https://github.com/Kaltsoon',
     email: 'kalleilv@gmail.com',
     intro:
-      'An enthusiastic and talented Full Stack Software Developer currently located in Helsinki Finland. Master of Computer Science from Algorithms, Data analytics, and Machine learning programme.',
+      'Full Stack Software Developer, MSc in Computer Science, Teacher, Mentor.',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import { useMatch } from '@reach/router';
 
 import { bodyTypographyCss, spaceCss } from '../theme';
@@ -36,24 +36,6 @@ const NavLinkBase = styled(Link)`
   }
 
   ${({ $active }) => $active && activeCss};
-`;
-
-const NAVIGATION_PAGES_QUERY = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { order: ASC, fields: [frontmatter___navigationIndex] }
-      filter: { frontmatter: { inNavigation: { eq: true } } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            path
-          }
-        }
-      }
-    }
-  }
 `;
 
 const NavLink = ({ to, ...props }) => {

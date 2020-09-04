@@ -11,6 +11,16 @@ export const spaceCss = (...values) => css`
       .join(' ')}
 `;
 
+export const breakpointDownCss = breakpoint => (...args) => {
+  const breakpointCss = css(...args);
+
+  return css`
+    @media (max-width: ${({ theme }) => theme.breakpoints[breakpoint]}) {
+      ${breakpointCss};
+    }
+  `
+}
+
 const fonts = {
   main: "'Open sans', serif",
   heading: "'Noto Serif JP', serif",
@@ -79,9 +89,17 @@ const typography = {
   },
 };
 
+const breakpoints = ['40em', '52em', '64em'];
+
+Object.assign(breakpoints, {
+  sm: breakpoints[0],
+  md: breakpoints[1],
+  lg: breakpoints[2],
+});
+
 const theme = {
   contentMaxWidth: 1280,
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints,
   fonts,
   colors: {
     textHeading: 'rgba(0, 0, 0, 0.87)',

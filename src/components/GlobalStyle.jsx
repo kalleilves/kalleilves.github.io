@@ -1,7 +1,11 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
-import { bodyTypographyCss } from '../theme';
+import { bodyTypographyCss, breakpointDownCss } from '../theme';
+
+const mobileCss = breakpointDownCss('sm')`
+  font-size: 15px;
+`;
 
 const GlobalStyle = createGlobalStyle`
   ${normalize()};
@@ -9,9 +13,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
   
-    @media(max-width: ${({ theme }) => theme.breakpoints[0]}) {
-      font-size: 15px;
-    }
+    ${mobileCss}
   }
   
   body {
