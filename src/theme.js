@@ -11,15 +11,15 @@ export const spaceCss = (...values) => css`
       .join(' ')}
 `;
 
-export const breakpointDownCss = breakpoint => (...args) => {
+export const breakpointDownCss = (breakpoint) => (...args) => {
   const breakpointCss = css(...args);
 
   return css`
     @media (max-width: ${({ theme }) => theme.breakpoints[breakpoint]}) {
       ${breakpointCss};
     }
-  `
-}
+  `;
+};
 
 const fonts = {
   main: "'Open sans', serif",

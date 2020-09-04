@@ -12,7 +12,7 @@ const SvgIconBase = styled.svg`
 `;
 
 const SvgIcon = ({ viewBox = '0 0 24 24', ...props }) => {
-  return <SvgIconBase role="img" viewBox={viewBox} {...props} />
+  return <SvgIconBase role="img" viewBox={viewBox} {...props} />;
 };
 
 export default SvgIcon;
