@@ -26,6 +26,13 @@ const fonts = {
   heading: "'Noto Serif JP', serif",
 };
 
+const colors = {
+  textHeading: 'rgba(0, 0, 0, 0.87)',
+  textPrimary: 'rgba(0, 0, 0, 0.7)',
+  textSecondary: '#586069',
+  primary: '#118ab2',
+};
+
 const fontSizes = {
   main: '1rem',
   h1: '6rem',
@@ -52,6 +59,7 @@ const baseTypography = {
   fontWeight: fontWeights.main,
   fontFamily: fonts.main,
   fontSize: fontSizes.main,
+  color: colors.textPrimary,
 };
 
 const headingTypography = {
@@ -59,6 +67,7 @@ const headingTypography = {
   lineHeight: lineHeights.heading,
   fontWeight: fontWeights.heading,
   fontFamily: fonts.heading,
+  color: colors.textHeading,
 };
 
 const typography = {
@@ -101,12 +110,7 @@ const theme = {
   contentMaxWidth: 1280,
   breakpoints,
   fonts,
-  colors: {
-    textHeading: 'rgba(0, 0, 0, 0.87)',
-    textPrimary: 'rgba(0, 0, 0, 0.7)',
-    textSecondary: '#586069',
-    primary: '#118ab2',
-  },
+  colors,
   fontWeights,
   lineHeights,
   fontSizes,

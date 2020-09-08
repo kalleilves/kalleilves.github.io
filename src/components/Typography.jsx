@@ -5,7 +5,6 @@ import {
   color,
   fontSize,
   fontWeight,
-  lineHeight,
   fontFamily,
   compose,
 } from 'styled-system';
@@ -22,37 +21,19 @@ const variantToComponent = {
   h6: 'h6',
 };
 
-const headingProps = {
-  color: 'textHeading',
-};
-
-const variantToProps = {
-  body: {
-    color: 'textPrimary',
-  },
-  h1: headingProps,
-  h2: headingProps,
-  h3: headingProps,
-  h4: headingProps,
-  h5: headingProps,
-  h6: headingProps,
-};
-
 const system = compose(
   space,
   color,
   fontSize,
   fontWeight,
-  lineHeight,
   fontFamily,
 );
 
 const TypographyBase = styled.span`
   padding: 0px;
   margin: 0px;
-  color: ${({ theme }) => theme.colors.textPrimary};
 
-  ${({ variant, theme }) => theme.typography[variant]};
+  ${({ $variant, theme }) => theme.typography[$variant]};
 
   ${system};
 `;
@@ -64,13 +45,11 @@ const Typography = ({
   ...props
 }) => {
   const as = asProp ? asProp : variantToComponent[variant] ?? 'span';
-  const variantProps = variantToProps[variant] ?? {};
 
   return (
     <TypographyBase
-      variant={variant}
+      $variant={variant}
       as={as}
-      {...variantProps}
       mb={gutterBottom ? 2 : 0}
       {...props}
     ></TypographyBase>

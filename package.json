@@ -34,7 +34,7 @@
   "keywords": [
     "portfolio"
   ],
-  "license": "MIT",
+  "license": "BSD",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

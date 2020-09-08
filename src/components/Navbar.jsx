@@ -21,7 +21,6 @@ const Nav = styled.nav`
 const NavLinkBase = styled(Link)`
   ${bodyTypographyCss};
 
-  color: ${({ theme }) => theme.colors.textPrimary};
   flex-grow: 0;
   padding: ${spaceCss(2, 4)};
   font-weight: ${({ theme }) => theme.fontWeights.bold};

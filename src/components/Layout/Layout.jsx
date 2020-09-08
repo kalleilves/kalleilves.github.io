@@ -1,18 +1,18 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import { spaceCss } from '../theme';
-import Box from './Box';
-import Typography from './Typography';
-import Portrait from './Portrait';
-import Navbar from './Navbar';
-import Button from './Button';
-import GlobalStyle from './GlobalStyle';
-import GithubIcon from './GithubIcon';
-import LinkedinIcon from './LinkedinIcon';
-import EmailIcon from './EmailIcon';
+import Box from '../Box';
+import Typography from '../Typography';
+import Portrait from '../Portrait';
+import Navbar from '../Navbar';
+import Button from '../Button';
+import GlobalStyle from '../GlobalStyle';
+import GithubIcon from '../GithubIcon';
+import LinkedinIcon from '../LinkedinIcon';
+import EmailIcon from '../EmailIcon';
+import Container from '../Container';
+import Footer from './Footer';
 
 const LAYOUT_QUERY = graphql`
   query {
@@ -40,13 +40,6 @@ const LAYOUT_QUERY = graphql`
       }
     }
   }
-`;
-
-const ContentWrapper = styled.div`
-  margin: 0px auto;
-  width: 100%;
-  max-width: ${({ theme }) => theme.contentMaxWidth}px;
-  padding: ${spaceCss(0, 4)};
 `;
 
 const PortraitContainer = ({ fullName }) => (
@@ -95,7 +88,7 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <ContentWrapper>
+      <Container>
         <Box display="flex" flexDirection={['column', 'row']} py={4}>
           <Box
             flexGrow={[1, 0]}
@@ -128,7 +121,8 @@ const Layout = ({ children }) => {
             {children}
           </Box>
         </Box>
-      </ContentWrapper>
+      </Container>
+      <Footer fullName={fullName} linkUrl={githubUrl} />
     </>
   );
 };

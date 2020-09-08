@@ -1,6 +1,7 @@
+import React from 'react';
 import styled from 'styled-components';
 
-const Anchor = styled.a`
+const AnchorBase = styled.a`
   font-size: inherit;
   font-family: inherit;
   text-decoration: underline;
@@ -10,5 +11,12 @@ const Anchor = styled.a`
     text-decoration: none;
   }
 `;
+
+const Anchor = ({ href, blank: blankProp, ...props }) => {
+  const blank = blankProp ?? Boolean(href);
+  const blankProps = blank ? { target: '_blank', rel: 'noopener' } : {};
+
+  return <AnchorBase href={href} {...blankProps} {...props} />;
+};
 
 export default Anchor;
