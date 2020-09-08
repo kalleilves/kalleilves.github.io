@@ -1,3 +1,6 @@
+const packageJson = require('./package.json');
+const repositoryUrl = packageJson.repository.url;
+
 module.exports = {
   siteMetadata: {
     title: 'Kalle Ilves',
@@ -9,6 +12,7 @@ module.exports = {
     email: 'kalleilv@gmail.com',
     intro:
       'Full Stack Software Developer, MSc in Computer Science, Teacher, Mentor.',
+    repositoryUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

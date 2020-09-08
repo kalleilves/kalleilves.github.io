@@ -12,11 +12,14 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 16px;
-  
+    min-height: 100vh;
+
     ${mobileCss}
   }
   
   body {
+    min-height: 100vh;
+    
     ${bodyTypographyCss};
   }
   

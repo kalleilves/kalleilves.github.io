@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
+import styled from 'styled-components';
 
 import Box from '../Box';
 import Typography from '../Typography';
@@ -13,6 +14,7 @@ import LinkedinIcon from '../LinkedinIcon';
 import EmailIcon from '../EmailIcon';
 import Container from '../Container';
 import Footer from './Footer';
+import Stack from '../Stack';
 
 const LAYOUT_QUERY = graphql`
   query {
@@ -23,6 +25,7 @@ const LAYOUT_QUERY = graphql`
         linkedinUrl
         githubUrl
         email
+        repositoryUrl
       }
     }
 
@@ -40,6 +43,20 @@ const LAYOUT_QUERY = graphql`
       }
     }
   }
+`;
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContentContainer = styled(Container)`
+  flex-grow: 1;
+`;
+
+const FooterContainer = styled(Footer)`
+  flex-grow: 0;
 `;
 
 const PortraitContainer = ({ fullName }) => (
@@ -73,7 +90,15 @@ const ContactButton = (props) => {
 const Layout = ({ children }) => {
   const { site, allMarkdownRemark } = useStaticQuery(LAYOUT_QUERY);
 
-  const { fullName, intro, linkedinUrl, githubUrl, email } = site.siteMetadata;
+  const {
+    fullName,
+    intro,
+    linkedinUrl,
+    githubUrl,
+    email,
+    repositoryUrl,
+  } = site.siteMetadata;
+
   const { edges } = allMarkdownRemark;
   const links = edges.map(({ node }) => node.frontmatter);
 
@@ -88,41 +113,48 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <Container>
-        <Box display="flex" flexDirection={['column', 'row']} py={4}>
-          <Box
-            flexGrow={[1, 0]}
-            flexBasis={['100%', '30%']}
-            mr={[0, 8]}
-            mb={[2, 0]}
-          >
-            <PortraitContainer fullName={fullName} />
+      <Wrapper>
+        <ContentContainer>
+          <Box display="flex" flexDirection={['column', 'row']} py={4}>
+            <Box
+              flexGrow={[1, 0]}
+              flexBasis={['100%', '30%']}
+              mr={[0, 8]}
+              mb={[2, 0]}
+            >
+              <PortraitContainer fullName={fullName} />
 
-            <Typography gutterBottom>{intro}</Typography>
+              <Typography gutterBottom>{intro}</Typography>
 
-            <Box mb={2}>
-              <ContactButton startIcon={<LinkedinIcon />} href={linkedinUrl}>
-                LinkedIn
-              </ContactButton>
+              <Stack>
+                <ContactButton startIcon={<LinkedinIcon />} href={linkedinUrl}>
+                  LinkedIn
+                </ContactButton>
+
+                <ContactButton startIcon={<GithubIcon />} href={githubUrl}>
+                  GitHub
+                </ContactButton>
+
+                <ContactButton
+                  startIcon={<EmailIcon />}
+                  href={`mailto:${email}`}
+                >
+                  Email
+                </ContactButton>
+              </Stack>
             </Box>
-
-            <Box mb={2}>
-              <ContactButton startIcon={<GithubIcon />} href={githubUrl}>
-                GitHub
-              </ContactButton>
+            <Box flexGrow={[1, 0]} flexBasis={['100%', '70%']}>
+              <Box mb={showNavbar ? 4 : 0}>{showNavbar && <Navbar />}</Box>
+              {children}
             </Box>
-
-            <ContactButton startIcon={<EmailIcon />} href={`mailto:${email}`}>
-              Email
-            </ContactButton>
           </Box>
-          <Box flexGrow={[1, 0]} flexBasis={['100%', '70%']}>
-            <Box mb={showNavbar ? 4 : 0}>{showNavbar && <Navbar />}</Box>
-            {children}
-          </Box>
-        </Box>
-      </Container>
-      <Footer fullName={fullName} linkUrl={githubUrl} />
+        </ContentContainer>
+        <FooterContainer
+          fullName={fullName}
+          personalUrl={githubUrl}
+          repositoryUrl={repositoryUrl}
+        />
+      </Wrapper>
     </>
   );
 };
