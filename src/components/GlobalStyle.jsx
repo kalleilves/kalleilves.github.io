@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { bodyTypographyCss, breakpointDownCss } from '../theme';
 
-const mobileCss = breakpointDownCss('sm')`
+const mobileCss = breakpointDownCss('xs')`
   font-size: 15px;
 `;
 

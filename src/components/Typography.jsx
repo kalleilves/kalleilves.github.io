@@ -21,13 +21,7 @@ const variantToComponent = {
   h6: 'h6',
 };
 
-const system = compose(
-  space,
-  color,
-  fontSize,
-  fontWeight,
-  fontFamily,
-);
+const system = compose(space, color, fontSize, fontWeight, fontFamily);
 
 const TypographyBase = styled.span`
   padding: 0px;

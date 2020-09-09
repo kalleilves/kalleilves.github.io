@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: 'Kalle Ilves',
     description: 'Kalle Ilves portfolio',
-    author: `@kalleilv`,
+    author: `Kalle Ilves`,
     fullName: 'Kalle Ilves',
     linkedinUrl: 'https://www.linkedin.com/in/kalleilves',
     githubUrl: 'https://github.com/Kaltsoon',

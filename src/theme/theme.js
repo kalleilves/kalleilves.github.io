@@ -1,25 +1,4 @@
-import { css } from 'styled-components';
-
-export const bodyTypographyCss = css`
-  ${({ theme }) => theme.typography.body};
-`;
-
-export const spaceCss = (...values) => css`
-  ${({ theme }) =>
-    values
-      .map((v) => (typeof v === 'number' ? `${theme.space[v]}px` : v))
-      .join(' ')}
-`;
-
-export const breakpointDownCss = (breakpoint) => (...args) => {
-  const breakpointCss = css(...args);
-
-  return css`
-    @media (max-width: ${({ theme }) => theme.breakpoints[breakpoint]}) {
-      ${breakpointCss};
-    }
-  `;
-};
+import createBreakpoints from './createBreakpoints';
 
 const fonts = {
   main: "'Open sans', serif",
@@ -98,12 +77,16 @@ const typography = {
   },
 };
 
-const breakpoints = ['40em', '52em', '64em'];
-
-Object.assign(breakpoints, {
-  sm: breakpoints[0],
-  md: breakpoints[1],
-  lg: breakpoints[2],
+const breakpoints = createBreakpoints({
+  keys: ['xs', 'sm', 'md', 'lg', 'xl'],
+  values: {
+    xs: 0,
+    sm: 600,
+    md: 960,
+    lg: 1280,
+    xl: 1920,
+  },
+  unit: 'px',
 });
 
 const theme = {

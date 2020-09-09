@@ -29,6 +29,11 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-plugin-react": "^7.20.6",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -38,10 +43,28 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write",
+    "lint": "eslint",
+    "lint:all": "eslint \"./src/**/*.{js,jsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx}": [
+      "npm run lint",
+      "git add"
+    ],
+    "*.{js,json,css,md}": [
+      "npm run format",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",

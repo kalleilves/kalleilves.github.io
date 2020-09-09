@@ -10,7 +10,7 @@ const Index = () => (
     <Typography variant="h4" as="h2" gutterBottom>
       Page not found
     </Typography>
-    <Typography>Dont' worry, just head back to the home page!</Typography>
+    <Typography>Don't worry, just head back to the home page!</Typography>
   </Layout>
 );
 
