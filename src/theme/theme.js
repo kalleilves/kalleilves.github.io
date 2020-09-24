@@ -8,8 +8,9 @@ const fonts = {
 const colors = {
   textHeading: 'rgba(0, 0, 0, 0.87)',
   textPrimary: 'rgba(0, 0, 0, 0.7)',
-  textSecondary: '#586069',
+  textSecondary: 'rgba(0, 0, 0, .5)',
   primary: '#118ab2',
+  primary50: '#e2f1f6',
 };
 
 const fontSizes = {
@@ -51,6 +52,11 @@ const headingTypography = {
 
 const typography = {
   body: baseTypography,
+  caption: {
+    ...baseTypography,
+    fontSize: '0.9rem',
+    color: colors.textSecondary,
+  },
   h1: {
     ...headingTypography,
     fontSize: fontSizes.h1,

@@ -144,7 +144,9 @@ const Layout = ({ children }) => {
               </Stack>
             </Box>
             <Box flexGrow={[1, 0]} flexBasis={['100%', '70%']}>
-              <Box mb={showNavbar ? 4 : 0}>{showNavbar && <Navbar />}</Box>
+              <Box mb={showNavbar ? 4 : 0}>
+                {showNavbar && <Navbar links={links} />}
+              </Box>
               {children}
             </Box>
           </Box>

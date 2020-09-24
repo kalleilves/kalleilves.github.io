@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-import { bodyTypographyCss, spaceCss } from '../theme';
+import { bodyTypographyCss, spaceCss, radiiCss } from '../theme';
 
 const fullWidthCss = css`
   width: 100%;
@@ -24,6 +24,7 @@ const ButtonBase = styled.button`
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
+  border-radius: ${radiiCss(1)};
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};

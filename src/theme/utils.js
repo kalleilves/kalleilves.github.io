@@ -40,3 +40,8 @@ export const breakpointBetweenCss = (start, end) => (...args) => {
     }
   `;
 };
+
+export const radiiCss = (value) => css`
+  ${({ theme }) =>
+    typeof value === 'number' ? `${theme.radii[value]}px` : value}
+`;
