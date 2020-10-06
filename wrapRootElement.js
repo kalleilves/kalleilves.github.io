@@ -13,6 +13,8 @@ const Root = ({ children }) => {
     });
   }, [prefersDarkColorScheme]);
 
+  console.log(theme);
+
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
