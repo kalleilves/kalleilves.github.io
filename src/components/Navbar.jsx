@@ -9,11 +9,12 @@ const activeCss = css`
   &,
   &:hover {
     border-bottom-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textHeading};
   }
 `;
 
 const Nav = styled.nav`
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
   display: flex;
   overflow-y: auto;
 `;
@@ -27,11 +28,11 @@ const NavLinkBase = styled(Link)`
   font-family: ${({ theme }) => theme.fonts.heading};
   text-decoration: none;
   border-bottom: 3px solid;
-  border-bottom-color: white;
-  transition: border-bottom-color 0.3s;
+  border-bottom-color: transparent;
+  transition: border-bottom-color 0.3s, color 0.3s;
 
   &:hover {
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    border-bottom-color: ${({ theme }) => theme.colors.divider};
   }
 
   ${({ $active }) => $active && activeCss};

@@ -19,7 +19,8 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     min-height: 100vh;
-    
+    background-color: ${({ theme }) => theme.colors.background};
+
     ${bodyTypographyCss};
   }
   

@@ -1,16 +1,28 @@
 import createBreakpoints from './createBreakpoints';
+import createTypography from './createTypography';
 
 const fonts = {
   main: "'Open sans', serif",
   heading: "'Noto Serif JP', serif",
 };
 
-const colors = {
+const lightModeColors = {
+  background: '#ffffff',
+  divider: 'rgba(0, 0, 0, 0.1)',
   textHeading: 'rgba(0, 0, 0, 0.87)',
   textPrimary: 'rgba(0, 0, 0, 0.7)',
   textSecondary: 'rgba(0, 0, 0, .5)',
   primary: '#118ab2',
   primary50: '#e2f1f6',
+};
+
+const darkModeColors = {
+  ...lightModeColors,
+  background: '#1a1e1f',
+  divider: 'rgba(255, 255, 255, 0.2)',
+  textHeading: '#ffffff',
+  textPrimary: 'rgba(255, 255, 255, 0.8)',
+  textSecondary: 'rgba(0, 0, 0, .6)',
 };
 
 const fontSizes = {
@@ -34,55 +46,6 @@ const fontWeights = {
   bold: 700,
 };
 
-const baseTypography = {
-  lineHeight: lineHeights.main,
-  fontWeight: fontWeights.main,
-  fontFamily: fonts.main,
-  fontSize: fontSizes.main,
-  color: colors.textPrimary,
-};
-
-const headingTypography = {
-  ...baseTypography,
-  lineHeight: lineHeights.heading,
-  fontWeight: fontWeights.heading,
-  fontFamily: fonts.heading,
-  color: colors.textHeading,
-};
-
-const typography = {
-  body: baseTypography,
-  caption: {
-    ...baseTypography,
-    fontSize: '0.9rem',
-    color: colors.textSecondary,
-  },
-  h1: {
-    ...headingTypography,
-    fontSize: fontSizes.h1,
-  },
-  h2: {
-    ...headingTypography,
-    fontSize: fontSizes.h2,
-  },
-  h3: {
-    ...headingTypography,
-    fontSize: fontSizes.h3,
-  },
-  h4: {
-    ...headingTypography,
-    fontSize: fontSizes.h4,
-  },
-  h5: {
-    ...headingTypography,
-    fontSize: fontSizes.h5,
-  },
-  h6: {
-    ...headingTypography,
-    fontSize: fontSizes.h6,
-  },
-};
-
 const breakpoints = createBreakpoints({
   keys: ['xs', 'sm', 'md', 'lg', 'xl'],
   values: {
@@ -95,17 +58,29 @@ const breakpoints = createBreakpoints({
   unit: 'px',
 });
 
-const theme = {
-  contentMaxWidth: 1280,
-  breakpoints,
-  fonts,
-  colors,
-  fontWeights,
-  lineHeights,
-  fontSizes,
-  space: [0, 8, 16, 24, 32, 40, 48, 56, 64],
-  radii: [0, 3],
-  typography,
+const createTheme = ({ colorMode = 'light' } = {}) => {
+  const colors = colorMode === 'light' ? lightModeColors : darkModeColors;
+
+  const typography = createTypography({
+    colors,
+    fonts,
+    fontSizes,
+    fontWeights,
+    lineHeights,
+  });
+
+  return {
+    contentMaxWidth: 1280,
+    breakpoints,
+    fonts,
+    colors,
+    fontWeights,
+    lineHeights,
+    fontSizes,
+    space: [0, 8, 16, 24, 32, 40, 48, 56, 64],
+    radii: [0, 3],
+    typography,
+  };
 };
 
-export default theme;
+export default createTheme;

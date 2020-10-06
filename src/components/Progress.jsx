@@ -22,7 +22,7 @@ const Bar = styled(animated.div)`
 const StepIndicator = styled.div`
   width: 2px;
   height: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.background};
   position: absolute;
   top: 0px;
 `;

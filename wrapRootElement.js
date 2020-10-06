@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import theme from './src/theme';
+import createTheme from './src/theme';
+import usePrefersDarkColorScheme from './src/hooks/usePrefersDarkColorScheme';
+
+const Root = ({ children }) => {
+  const prefersDarkColorScheme = usePrefersDarkColorScheme();
+
+  const theme = useMemo(() => {
+    return createTheme({
+      colorMode: prefersDarkColorScheme ? 'dark' : 'light',
+    });
+  }, [prefersDarkColorScheme]);
+
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
 
 const wrapRootElement = ({ element }) => {
-  return <ThemeProvider theme={theme}>{element}</ThemeProvider>;
+  return <Root>{element}</Root>;
 };
 
 export default wrapRootElement;

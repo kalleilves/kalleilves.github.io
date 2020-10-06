@@ -8,7 +8,7 @@ import GithubIcon from '../GithubIcon';
 
 const FooterWrapper = styled.footer`
   padding: ${spaceCss(2, 0)};
-  background-color: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid ${({ theme }) => theme.colors.divider};
   text-align: center;
 `;
 
