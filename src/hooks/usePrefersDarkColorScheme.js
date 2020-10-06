@@ -35,6 +35,7 @@ const watchPrefersDarkColorSchme = (fn) => {
 };
 
 const usePrefersDarkColorScheme = () => {
+  // eslint-disable-next-line
   const [prefersDarkColorScheme, setPrefersDarkColorScheme] = useState(
     getPrefersDarkColorScheme,
   );
@@ -47,7 +48,8 @@ const usePrefersDarkColorScheme = () => {
     return unsubscribe;
   }, []);
 
-  return prefersDarkColorScheme;
+  // TODO: Fix this when switching theme works properly with styled-components
+  return false;
 };
 
 export default usePrefersDarkColorScheme;
