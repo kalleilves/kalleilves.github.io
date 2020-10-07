@@ -30,7 +30,7 @@ const watchPrefersDarkColorSchme = (fn) => {
   QUERY.addEventListener('change', callback);
 
   return () => {
-    QUERY.removeEventListener(callback);
+    QUERY.removeEventListener('change', callback);
   };
 };
 
