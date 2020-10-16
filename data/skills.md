@@ -30,9 +30,9 @@ Here are some of the highlights of my technical skills:
 
 <skill-progress skill="Docker" level="good" /></skill-progress>
 
-<skill-progress skill="Python" description="Including Django" level="good" /></skill-progress>
+<skill-progress skill="Python" description="Including Django, FastAPI and Flask" level="good" /></skill-progress>
 
-<skill-progress skill="Ruby" description="Including Ruby on Rails" level="good" /></skill-progress>
+<skill-progress skill="Ruby" description="Including Ruby on Rails and Sinatra" level="good" /></skill-progress>
 
 <skill-progress skill="Java" description="Including Spring" level="moderate" /></skill-progress>
 
