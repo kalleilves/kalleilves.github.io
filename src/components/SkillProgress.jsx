@@ -32,7 +32,7 @@ const SkillProgress = ({
   return (
     <div>
       <Box mb={2}>
-        <Typography variant="h6" as="h2" mb={hasDescription ? 1 : 0}>
+        <Typography variant="h6" as="h2" mb={hasDescription ? 2 : 0}>
           {skill}
         </Typography>
         {hasDescription && (

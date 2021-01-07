@@ -1,5 +1,5 @@
 ---
-title: 'My skills'
+title: 'Skills'
 path: '/skills'
 inNavigation: true
 navigationIndex: 1
@@ -22,15 +22,15 @@ Here are some of the highlights of my technical skills:
 
 <skill-progress skill="General developer skills" description="Including Unix shell, Git, continuous integration, continuous delivery" level="excellent" /></skill-progress>
 
+<skill-progress skill="Python" description="Including Django, FastAPI, Flask and Robot Framework" level="good" /></skill-progress>
+
 <skill-progress skill="SQL databases" description="Including PostgreSQL and MySQL" level="good" /></skill-progress>
 
 <skill-progress skill="NoSQL databases" description="Including MongoDB, Redis and Cassandra" level="good" /></skill-progress>
 
-<skill-progress skill="React Native" level="good" /></skill-progress>
-
 <skill-progress skill="Docker" level="good" /></skill-progress>
 
-<skill-progress skill="Python" description="Including Django, FastAPI and Flask" level="good" /></skill-progress>
+<skill-progress skill="React Native" level="good" /></skill-progress>
 
 <skill-progress skill="Ruby" description="Including Ruby on Rails and Sinatra" level="good" /></skill-progress>
 
