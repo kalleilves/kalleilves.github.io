@@ -30,6 +30,7 @@ const NavLinkBase = styled(Link)`
   border-bottom: 3px solid;
   border-bottom-color: transparent;
   transition: border-bottom-color 0.3s, color 0.3s;
+  white-space: nowrap;
 
   &:hover {
     border-bottom-color: ${({ theme }) => theme.colors.divider};
