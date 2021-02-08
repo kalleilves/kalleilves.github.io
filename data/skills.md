@@ -7,7 +7,7 @@ navigationIndex: 1
 
 # My skills
 
-I am a Full Stack Software Developer. This means that I (or I am very capable of learning how to) develop, test, and deploy software for any purpose.
+I am a Full Stack Software Developer. This means that I can develop, test, and deploy software for any purpose or platform.
 
 Here are some of the highlights of my technical skills:
 
@@ -24,11 +24,13 @@ Here are some of the highlights of my technical skills:
 
 <skill-progress skill="Python" description="Including Django, FastAPI, Flask and Robot Framework" level="good" /></skill-progress>
 
-<skill-progress skill="SQL databases" description="Including PostgreSQL and MySQL" level="good" /></skill-progress>
+<skill-progress skill="SQL databases" description="Including PostgreSQL, MySQL and SQLite" level="good" /></skill-progress>
 
-<skill-progress skill="NoSQL databases" description="Including MongoDB, Redis and Cassandra" level="good" /></skill-progress>
+<skill-progress skill="NoSQL databases" description="Including MongoDB, Redis, Cassandra and RethinkDB" level="good" /></skill-progress>
 
-<skill-progress skill="Docker" level="good" /></skill-progress>
+<skill-progress skill="Messaging systems" description="Including RabbitMQ and Nats" level="good" /></skill-progress>
+
+<skill-progress skill="Docker" level="good" description="Including Docker Compose" /></skill-progress>
 
 <skill-progress skill="React Native" level="good" /></skill-progress>
 
