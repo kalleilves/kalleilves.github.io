@@ -7,7 +7,7 @@ navigationIndex: 1
 
 # My skills
 
-I am a Full Stack Software Developer. This means that I can develop, test, and deploy software for any purpose or platform.
+I am a full stack software developer. This means that I can develop, test, and deploy software for any purpose or platform.
 
 Here are some of the highlights of my technical skills:
 
