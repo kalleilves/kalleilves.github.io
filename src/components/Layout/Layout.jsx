@@ -73,7 +73,7 @@ const PortraitContainer = ({ fullName }) => (
       width="100%"
       mr={[2, 0]}
     >
-      <Portrait />
+      <Portrait alt={fullName} />
     </Box>
     <div>
       <Typography variant="h5" as="h1">

@@ -6,23 +6,15 @@ const fonts = {
   heading: "'Noto Serif JP', serif",
 };
 
-const lightModeColors = {
-  background: '#ffffff',
-  divider: 'rgba(0, 0, 0, 0.1)',
-  textHeading: 'rgba(0, 0, 0, 0.87)',
-  textPrimary: 'rgba(0, 0, 0, 0.7)',
-  textSecondary: 'rgba(0, 0, 0, .5)',
-  primary: '#118ab2',
-  primary50: '#e2f1f6',
-};
-
-const darkModeColors = {
-  ...lightModeColors,
-  background: '#1a1e1f',
-  divider: 'rgba(255, 255, 255, 0.2)',
-  textHeading: '#ffffff',
-  textPrimary: 'rgba(255, 255, 255, 0.8)',
-  textSecondary: 'rgba(0, 0, 0, .6)',
+const colors = {
+  background: 'var(--color-background)',
+  divider: 'var(--color-divider)',
+  textHeading: 'var(--color-text-heading)',
+  textPrimary: 'var(--color-text-primary)',
+  textSecondary: 'var(--color-text-secondary)',
+  primary: 'var(--color-primary)',
+  primary50: 'var(--color-primary-50)',
+  primaryContrastText: 'var(--color-primary-contrast-text)',
 };
 
 const fontSizes = {
@@ -58,29 +50,25 @@ const breakpoints = createBreakpoints({
   unit: 'px',
 });
 
-const createTheme = ({ colorMode = 'light' } = {}) => {
-  const colors = colorMode === 'light' ? lightModeColors : darkModeColors;
+const typography = createTypography({
+  colors,
+  fonts,
+  fontSizes,
+  fontWeights,
+  lineHeights,
+});
 
-  const typography = createTypography({
-    colors,
-    fonts,
-    fontSizes,
-    fontWeights,
-    lineHeights,
-  });
-
-  return {
-    contentMaxWidth: 1280,
-    breakpoints,
-    fonts,
-    colors,
-    fontWeights,
-    lineHeights,
-    fontSizes,
-    space: [0, 8, 16, 24, 32, 40, 48, 56, 64],
-    radii: [0, 3],
-    typography,
-  };
+const theme = {
+  contentMaxWidth: '1280px',
+  breakpoints,
+  fonts,
+  colors,
+  fontWeights,
+  lineHeights,
+  fontSizes,
+  space: [0, 8, 16, 24, 32, 40, 48, 56, 64],
+  radii: [0, 3],
+  typography,
 };
 
-export default createTheme;
+export default theme;

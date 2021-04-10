@@ -1,28 +1,26 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
-const Image = styled(Img)`
+const Image = styled(GatsbyImage)`
   border-radius: 50%;
   max-width: 300px;
   margin: 0px auto;
 `;
 
-const Portrait = () => {
+const Portrait = ({ alt }) => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "portrait.jpeg" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
     }
   `);
 
-  return <Image fluid={data.file.childImageSharp.fluid} />;
+  return <Image alt={alt} image={data.file.childImageSharp.gatsbyImageData} />;
 };
 
 export default Portrait;
