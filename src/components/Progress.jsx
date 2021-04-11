@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { radiiCss } from '../theme';
 
 const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary50};
+  background-color: ${({ theme }) => theme.colors.primaryA30};
   width: 100%;
   height: 10px;
   position: relative;

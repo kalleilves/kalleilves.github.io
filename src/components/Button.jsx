@@ -16,7 +16,7 @@ const ButtonBase = styled.button`
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors.primaryA10};
   cursor: pointer;
   border: 2px solid ${({ theme }) => theme.colors.primary};
   min-width: 64px;

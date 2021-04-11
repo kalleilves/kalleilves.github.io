@@ -13,7 +13,8 @@ const colors = {
   textPrimary: 'var(--color-text-primary)',
   textSecondary: 'var(--color-text-secondary)',
   primary: 'var(--color-primary)',
-  primary50: 'var(--color-primary-50)',
+  primaryA10: 'var(--color-primary-a10)',
+  primaryA30: 'var(--color-primary-a30)',
   primaryContrastText: 'var(--color-primary-contrast-text)',
 };
 

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
 import { useMatch } from '@reach/router';
 
 import { bodyTypographyCss, spaceCss } from '../theme';
+
+const scrollIntoView = (element, options) => {
+  if (typeof element?.scrollIntoView === 'function') {
+    element.scrollIntoView(options);
+  }
+};
 
 const activeCss = css`
   &,
@@ -41,8 +47,15 @@ const NavLinkBase = styled(Link)`
 
 const NavLink = ({ to, ...props }) => {
   const match = useMatch(to);
+  const ref = useRef();
 
-  return <NavLinkBase $active={match} to={to} {...props} />;
+  useEffect(() => {
+    if (match) {
+      scrollIntoView(ref.current);
+    }
+  }, []);
+
+  return <NavLinkBase ref={ref} $active={match} to={to} {...props} />;
 };
 
 const Navbar = ({ links }) => {
