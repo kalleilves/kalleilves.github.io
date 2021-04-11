@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 const Image = styled(GatsbyImage)`
   border-radius: 50%;
+  transform: translateZ(0);
 `;
 
 const ImageContainer = styled.div`
