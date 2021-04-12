@@ -13,8 +13,8 @@ const lightModeVariablesCss = css`
   --color-background: #ffffff;
   --color-divider: rgba(0, 0, 0, 0.1);
   --color-primary: ${primaryColor};
-  --color-primary-a30: ${rgba(primaryColor, 0.3)};
-  --color-primary-a10: ${rgba(primaryColor, 0.1)};
+  --color-primary-alpha-30: ${rgba(primaryColor, 0.3)};
+  --color-primary-alpha-10: ${rgba(primaryColor, 0.1)};
   --color-primary-contrast-text: #ffffff;
   --color-text-heading: rgba(0, 0, 0, 0.87);
   --color-text-primary: rgba(0, 0, 0, 0.7);

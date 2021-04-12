@@ -16,7 +16,7 @@ const ButtonBase = styled.button`
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  background-color: ${({ theme }) => theme.colors.primaryA10};
+  background-color: ${({ theme }) => theme.colors.primaryAlpha10};
   cursor: pointer;
   border: 2px solid ${({ theme }) => theme.colors.primary};
   min-width: 64px;
@@ -28,7 +28,7 @@ const ButtonBase = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
-    color: white;
+    color: ${({ theme }) => theme.colors.primaryContrastText};
   }
 
   ${({ $fullWidth }) => $fullWidth && fullWidthCss};
