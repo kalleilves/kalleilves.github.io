@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import { spaceCss } from '../../theme';
 import Container from '../Container';
-import Anchor from '../Anchor';
+import Link from '../Link';
 import GithubIcon from '../GithubIcon';
 
 const FooterWrapper = styled.footer`
@@ -15,10 +14,6 @@ const FooterWrapper = styled.footer`
 const SourceWrapper = styled.span`
   display: inline-flex;
   justify-content: center;
-`;
-
-const FooterAnchor = styled(Anchor)`
-  color: inherit;
 `;
 
 const SourceCodeIcon = styled(GithubIcon)`
@@ -34,14 +29,19 @@ const Footer = ({ fullName, personalUrl, repositoryUrl, className }) => (
       </span>{' '}
       by{' '}
       {personalUrl ? (
-        <FooterAnchor href={personalUrl}>{fullName}</FooterAnchor>
+        <Link color="inherit" href={personalUrl}>
+          {fullName}
+        </Link>
       ) : (
         fullName
       )}{' '}
       ·{' '}
       <SourceWrapper>
         <span>
-          <FooterAnchor href={repositoryUrl}>Source code</FooterAnchor> at
+          <Link color="inherit" href={repositoryUrl}>
+            Source code
+          </Link>{' '}
+          at
         </span>{' '}
         <SourceCodeIcon />
       </SourceWrapper>

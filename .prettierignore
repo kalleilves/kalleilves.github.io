@@ -1,4 +1,4 @@
-.cache
-package.json
+.next
 package-lock.json
 public
+node_modules

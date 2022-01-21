@@ -3,7 +3,7 @@ import createTypography from './createTypography';
 
 const fonts = {
   main: "'Open sans', serif",
-  heading: "'Noto Serif JP', serif",
+  heading: "'Montserrat', sans-serif",
 };
 
 const colors = {
@@ -13,6 +13,7 @@ const colors = {
   textPrimary: 'var(--color-text-primary)',
   textSecondary: 'var(--color-text-secondary)',
   primary: 'var(--color-primary)',
+  primaryDark: 'var(--color-primary-dark)',
   primaryAlpha10: 'var(--color-primary-alpha-10)',
   primaryAlpha30: 'var(--color-primary-alpha-30)',
   primaryContrastText: 'var(--color-primary-contrast-text)',

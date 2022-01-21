@@ -1,71 +1,19 @@
 {
   "name": "kalleilves.github.io",
-  "private": true,
   "description": "Portfolio",
   "version": "0.1.0",
   "author": "Kalle Ilves",
-  "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^3.2.1",
-    "gatsby-image": "^3.2.0",
-    "gatsby-plugin-image": "^1.2.1",
-    "gatsby-plugin-manifest": "^3.2.0",
-    "gatsby-plugin-offline": "^4.2.0",
-    "gatsby-plugin-react-helmet": "^4.2.0",
-    "gatsby-plugin-sharp": "^3.2.1",
-    "gatsby-plugin-styled-components": "^4.2.0",
-    "gatsby-source-filesystem": "^3.2.0",
-    "gatsby-transformer-remark": "^3.2.0",
-    "gatsby-transformer-sharp": "^3.2.0",
-    "intersection-observer": "^0.12.0",
-    "polished": "^4.1.1",
-    "postcss": "^8.2.9",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-intersection-observer": "^8.28.6",
-    "react-is": "^17.0.2",
-    "react-spring": "^9.1.0",
-    "rehype-react": "^6.0.0",
-    "styled-components": "^5.2.3",
-    "styled-system": "^5.1.5"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.8.1",
-    "eslint-plugin-react": "^7.20.6",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.3.0",
-    "prettier": "2.0.5"
-  },
-  "keywords": [
-    "portfolio"
-  ],
-  "license": "BSD",
+  "private": true,
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format:all": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "format": "prettier --write",
-    "lint": "eslint",
-    "lint:all": "eslint \"./src/**/*.{js,jsx}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "./src/**/*.{js,jsx}": [
-      "npm run lint"
-    ],
-    "*.{js,json,css,md}": [
-      "npm run format"
-    ]
+    "src/**/*.js": "eslint",
+    "*.{js,json,css,md}": "prettier --write"
   },
   "repository": {
     "type": "git",
@@ -73,5 +21,41 @@
   },
   "bugs": {
     "url": "https://github.com/kalleilves/kalleilves.github.io"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "license": "BSD",
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@next/mdx": "^12.0.8",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "install": "^0.13.0",
+    "lqip-loader": "^2.2.1",
+    "next": "12.0.8",
+    "next-optimized-images": "^2.6.2",
+    "npm": "^8.3.2",
+    "polished": "^4.1.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-intersection-observer": "^8.33.1",
+    "react-spring": "^9.4.2",
+    "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/eslint-parser": "^7.16.5",
+    "eslint": "^8.7.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-mdx": "^1.16.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.2.2",
+    "prettier": "^2.5.1"
   }
 }

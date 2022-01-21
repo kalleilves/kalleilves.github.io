@@ -1,7 +1,6 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
-import { Link } from 'gatsby';
-import { useMatch } from '@reach/router';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { bodyTypographyCss, spaceCss } from '../theme';
 
@@ -19,7 +18,7 @@ const Nav = styled.nav`
   overflow-y: auto;
 `;
 
-const NavLinkBase = styled(Link)`
+const NavLinkBase = styled.a`
   ${bodyTypographyCss};
 
   flex-grow: 0;
@@ -39,20 +38,24 @@ const NavLinkBase = styled(Link)`
   ${({ $active }) => $active && activeCss};
 `;
 
-const NavLink = ({ to, ...props }) => {
-  const match = useMatch(to);
+const NavLink = ({ href, children, ...props }) => {
+  const { asPath } = useRouter();
 
-  return <NavLinkBase $active={match} to={to} {...props} />;
+  const active = asPath === href;
+
+  return (
+    <Link href={href} passHref {...props}>
+      <NavLinkBase $active={active}>{children}</NavLinkBase>
+    </Link>
+  );
 };
 
-const Navbar = ({ links }) => {
+const Navbar = () => {
   return (
     <Nav>
-      {links.map(({ title, path }) => (
-        <NavLink key={path} to={path}>
-          {title}
-        </NavLink>
-      ))}
+      <NavLink href="/">About me</NavLink>
+      <NavLink href="/skills">Skills</NavLink>
+      <NavLink href="/background">Background</NavLink>
     </Nav>
   );
 };

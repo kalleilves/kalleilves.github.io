@@ -1,6 +1,12 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "parser": "babel-eslint",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:mdx/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
   "env": {
     "node": true,
     "es6": true,
@@ -11,9 +17,12 @@
   },
   "rules": {
     "react/prop-types": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error"
   },
   "settings": {
+    "mdx/code-blocks": true,
     "react": {
       "version": "detect"
     }

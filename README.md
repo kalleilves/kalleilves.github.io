@@ -6,4 +6,4 @@ This is the repository for my personal portfolio site at [https://kalleilves.git
 
 ## Development
 
-Run `npm start` to start the Gatsby's development server and `npm build` to build the production version of the site.
+Run `npm run rev` to start the Next.js development server and `npm build` to build the production version of the site.

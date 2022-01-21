@@ -1,17 +1,19 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
 import Typography from '../components/Typography';
+import InternalLink from '../components/InternalLink';
 
-const Index = () => (
-  <Layout>
-    <SEO title="Page not found" />
+const NotFound = () => (
+  <Layout title="Not found">
     <Typography variant="h4" as="h2" gutterBottom>
-      Page not found
+      Not found
     </Typography>
-    <Typography>Don't worry, just head back to the home page!</Typography>
+    <Typography>
+      There's nothing to see here. Don't worry, just head back to the{' '}
+      <InternalLink href="/">home page</InternalLink>.
+    </Typography>
   </Layout>
 );
 
-export default Index;
+export default NotFound;

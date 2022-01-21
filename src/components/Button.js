@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { bodyTypographyCss, spaceCss, radiiCss } from '../theme';
@@ -12,13 +11,12 @@ const ButtonBase = styled.button`
   ${bodyTypographyCss};
 
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: ${({ theme }) => theme.colors.primary};
+  color: white;
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  background-color: ${({ theme }) => theme.colors.primaryAlpha10};
+  background-color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
   min-width: 64px;
   padding: 16px 24px;
   text-decoration: none;
@@ -27,7 +25,7 @@ const ButtonBase = styled.button`
   border-radius: ${radiiCss(1)};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primaryDark};
     color: ${({ theme }) => theme.colors.primaryContrastText};
   }
 

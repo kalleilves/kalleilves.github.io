@@ -1,0 +1,68 @@
+import Layout from '../components/Layout';
+import Stack from '../components/Stack';
+import SkillProgress from '../components/SkillProgress';
+
+# My skills
+
+I am a full stack software developer. This means that I can develop, test, and deploy software for any purpose or platform.
+
+Here are some of the highlights of my technical skills:
+
+<Stack>
+  <SkillProgress
+    skill="JavaScript"
+    description="Including modern language features, ecosystem, and client-side and server-side development"
+    level="excellent"
+  />
+  <SkillProgress skill="TypeScript" level="excellent" />
+  <SkillProgress
+    skill="React"
+    description="Including frameworks and libraries such as Gatsby, Next.js, Redux, styled-components, and many more"
+    level="excellent"
+  />
+  <SkillProgress
+    skill="GraphQL"
+    description="Including GraphQL query language, GraphQL API design, and Apollo's client-side and server-side libraries"
+    level="excellent"
+  />
+  <SkillProgress
+    skill="General developer skills"
+    description="Including Unix shell, Git, continuous integration, continuous delivery"
+    level="excellent"
+  />
+  <SkillProgress
+    skill="Python"
+    description="Including Django, FastAPI, Flask and Robot Framework"
+    level="good"
+  />
+  <SkillProgress
+    skill="SQL databases"
+    description="Including PostgreSQL, MySQL and SQLite"
+    level="good"
+  />
+  <SkillProgress
+    skill="NoSQL databases"
+    description="Including MongoDB, Redis, Cassandra and RethinkDB"
+    level="good"
+  />
+  <SkillProgress
+    skill="Messaging systems"
+    description="Including RabbitMQ and Nats"
+    level="good"
+  />
+  <SkillProgress
+    skill="Docker"
+    level="good"
+    description="Including Docker Compose"
+  />
+  <SkillProgress skill="React Native" level="good" />
+  <SkillProgress
+    skill="Ruby"
+    description="Including Ruby on Rails and Sinatra"
+    level="good"
+  />
+  <SkillProgress skill="Java" description="Including Spring" level="moderate" />
+  <SkillProgress skill="PHP" description="Including Laravel" level="moderate" />
+</Stack>
+
+export default ({ children }) => <Layout title="My skills">{children}</Layout>;
