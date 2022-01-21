@@ -6,7 +6,7 @@ import InternalLink from '../components/InternalLink';
 
 const NotFound = () => (
   <Layout title="Not found">
-    <Typography variant="h4" as="h2" gutterBottom>
+    <Typography variant="h3" as="h1" gutterBottom>
       Not found
     </Typography>
     <Typography>
