@@ -24,7 +24,7 @@ const PortraitContainer = ({ fullName }) => (
       <Portrait alt={fullName} />
     </Box>
     <div>
-      <Typography variant="h5" as="h1">
+      <Typography variant="h4" as="h1">
         {fullName}
       </Typography>
     </div>

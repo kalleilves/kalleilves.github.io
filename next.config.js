@@ -1,5 +1,6 @@
 const withMDX = require('@next/mdx')();
 const withOptimizedImages = require('next-optimized-images');
+const withOffline = require('next-offline');
 
 const config = {
   reactStrictMode: true,
@@ -10,4 +11,4 @@ const config = {
   },
 };
 
-module.exports = withOptimizedImages(withMDX(config));
+module.exports = withOffline(withOptimizedImages(withMDX(config)));
