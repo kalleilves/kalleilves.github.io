@@ -11,7 +11,6 @@ import styled from 'styled-components';
 
 const variantToComponent = {
   body: 'p',
-  caption: 'p',
   h1: 'h1',
   h2: 'h2',
   h3: 'h3',

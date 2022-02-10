@@ -11,12 +11,10 @@ const colors = {
   divider: 'var(--color-divider)',
   textHeading: 'var(--color-text-heading)',
   textPrimary: 'var(--color-text-primary)',
-  textSecondary: 'var(--color-text-secondary)',
   primary: 'var(--color-primary)',
-  primaryDark: 'var(--color-primary-dark)',
-  primaryAlpha10: 'var(--color-primary-alpha-10)',
-  primaryAlpha30: 'var(--color-primary-alpha-30)',
   primaryContrastText: 'var(--color-primary-contrast-text)',
+  primaryDark: 'var(--color-primary-dark)',
+  primaryAlpha30: 'var(--color-primary-alpha-30)',
 };
 
 const fontSizes = {

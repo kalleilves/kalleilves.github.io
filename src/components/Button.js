@@ -11,7 +11,7 @@ const ButtonBase = styled.button`
   ${bodyTypographyCss};
 
   font-weight: ${({ theme }) => theme.fontWeights.bold};
-  color: white;
+  color: ${({ theme }) => theme.colors.primaryContrastText};
   justify-content: center;
   align-items: center;
   display: inline-flex;
@@ -26,7 +26,6 @@ const ButtonBase = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryDark};
-    color: ${({ theme }) => theme.colors.primaryContrastText};
   }
 
   ${({ $fullWidth }) => $fullWidth && fullWidthCss};

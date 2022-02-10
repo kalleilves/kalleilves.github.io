@@ -23,11 +23,6 @@ const createTypography = ({
 
   return {
     body: baseTypography,
-    caption: {
-      ...baseTypography,
-      fontSize: '0.9rem',
-      color: colors.textSecondary,
-    },
     h1: {
       ...headingTypography,
       fontSize: fontSizes.h1,

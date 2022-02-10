@@ -1,4 +1,4 @@
-import { normalize, rgba, darken } from 'polished';
+import { normalize, rgba } from 'polished';
 import { css } from 'styled-components';
 
 import { bodyTypographyCss, breakpointDownCss } from './utils';
@@ -7,27 +7,27 @@ const mobileCss = breakpointDownCss('xs')`
   font-size: 15px;
 `;
 
-const primaryColor = '#1A66FF';
-
 const lightModeVariablesCss = css`
   --color-background: #ffffff;
   --color-divider: rgba(0, 0, 0, 0.1);
-  --color-primary: ${primaryColor};
-  --color-primary-dark: ${darken(0.1, primaryColor)};
-  --color-primary-alpha-30: ${rgba(primaryColor, 0.3)};
-  --color-primary-alpha-10: ${rgba(primaryColor, 0.1)};
+  --color-primary: #1976d2;
   --color-primary-contrast-text: #ffffff;
-  --color-text-heading: rgba(0, 0, 0, 0.87);
-  --color-text-primary: rgba(0, 0, 0, 0.7);
-  --color-text-secondary: rgba(0, 0, 0, 0.5);
+  --color-primary-dark: #1565c0;
+  --color-primary-alpha-30: ${rgba('#1976d2', 0.3)};
+  --color-primary-contrast-text: #ffffff;
+  --color-text-heading: rgb(26, 32, 39);
+  --color-text-primary: rgb(51, 63, 77);
 `;
 
 const darkModeVariablesCss = css`
-  --color-background: #202124;
+  --color-primary: #90caf9;
+  --color-primary-dark: #42a5f5;
+  --color-primary-alpha-30: ${rgba('#90caf9', 0.3)};
+  --color-primary-contrast-text: rgba(0, 0, 0, 0.87);
+  --color-background: rgb(0, 30, 60);
   --color-divider: rgba(255, 255, 255, 0.2);
   --color-text-heading: #ffffff;
-  --color-text-primary: rgba(255, 255, 255, 0.8);
-  --color-text-secondary: rgba(0, 0, 0, 0.6);
+  --color-text-primary: rgb(178, 186, 194);
 `;
 
 export const normalizeCss = css`
