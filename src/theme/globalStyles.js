@@ -27,7 +27,7 @@ const darkModeVariablesCss = css`
   --color-background: rgb(0, 30, 60);
   --color-divider: rgba(255, 255, 255, 0.2);
   --color-text-heading: #ffffff;
-  --color-text-primary: rgb(178, 186, 194);
+  --color-text-primary: rgba(192, 199, 206, 1);
 `;
 
 export const normalizeCss = css`
