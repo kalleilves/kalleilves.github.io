@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import { bodyTypographyCss, spaceCss } from '../theme';
 
 const activeCss = css`
   &,
   &:hover {
-    border-bottom-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }) => theme.colors.textHeading};
   }
 `;
@@ -18,6 +18,15 @@ const Nav = styled.nav`
   overflow-y: auto;
 `;
 
+const NavLinkUnderline = styled(motion.div)`
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 3px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.primary}; ;
+`;
+
 const NavLinkBase = styled.a`
   ${bodyTypographyCss};
 
@@ -26,13 +35,12 @@ const NavLinkBase = styled.a`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-family: ${({ theme }) => theme.fonts.heading};
   text-decoration: none;
-  border-bottom: 3px solid;
-  border-bottom-color: transparent;
-  transition: border-bottom-color 0.3s, color 0.3s;
+  transition: color 0.3s, color 0.3s;
   white-space: nowrap;
+  position: relative;
 
   &:hover {
-    border-bottom-color: ${({ theme }) => theme.colors.divider};
+    color: ${({ theme }) => theme.colors.textHeading};
   }
 
   ${({ $active }) => $active && activeCss};
@@ -45,7 +53,9 @@ const NavLink = ({ href, children, ...props }) => {
 
   return (
     <Link href={href} passHref {...props}>
-      <NavLinkBase $active={active}>{children}</NavLinkBase>
+      <NavLinkBase $active={active}>
+        {children} {active && <NavLinkUnderline layoutId="navLinkUnderline" />}
+      </NavLinkBase>
     </Link>
   );
 };

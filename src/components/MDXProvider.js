@@ -17,7 +17,7 @@ const H3 = (props) => (
   <Typography variant="h5" as="h3" gutterBottom {...props} />
 );
 
-const A = (props) => <Link blank {...props} />;
+const A = (props) => <Link data-lorem="ipsum" blank {...props} />;
 
 const components = {
   p: P,

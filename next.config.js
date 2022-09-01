@@ -1,4 +1,12 @@
-const withMDX = require('@next/mdx')();
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    providerImportSource: '@mdx-js/react',
+  },
+});
+
 const withOptimizedImages = require('next-optimized-images');
 const withOffline = require('next-offline');
 

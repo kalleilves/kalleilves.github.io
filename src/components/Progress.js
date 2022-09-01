@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { useSpring, animated } from 'react-spring';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 import { radiiCss } from '../theme';
 
@@ -13,7 +12,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Bar = styled(animated.div)`
+const Bar = styled(motion.div)`
   height: 100%;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
@@ -27,13 +26,6 @@ const StepIndicator = styled.div`
 `;
 
 const Progress = ({ value = 0, steps }) => {
-  const { ref, inView } = useInView({ triggerOnce: true });
-
-  const barStyle = useSpring({
-    width: inView ? `${value}%` : '0%',
-    from: { width: '0%' },
-  });
-
   const stepSize = steps ? 100 / steps : 0;
 
   const stepIndicators =
@@ -43,8 +35,8 @@ const Progress = ({ value = 0, steps }) => {
     ));
 
   return (
-    <Container ref={ref}>
-      <Bar style={barStyle} />
+    <Container>
+      <Bar initial={{ width: '0%' }} whileInView={{ width: `${value}%` }} />
       {stepIndicators}
     </Container>
   );
