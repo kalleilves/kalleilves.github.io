@@ -11,35 +11,41 @@ export const spaceCss = (...values) => css`
       .join(' ')}
 `;
 
-export const breakpointDownCss = (key) => (...args) => {
-  const breakpointCss = css(...args);
+export const breakpointDownCss =
+  (key) =>
+  (...args) => {
+    const breakpointCss = css(...args);
 
-  return css`
-    ${({ theme }) => theme.breakpoints.down(key)} {
-      ${breakpointCss};
-    }
-  `;
-};
+    return css`
+      ${({ theme }) => theme.breakpoints.down(key)} {
+        ${breakpointCss};
+      }
+    `;
+  };
 
-export const breakpointUpCss = (key) => (...args) => {
-  const breakpointCss = css(...args);
+export const breakpointUpCss =
+  (key) =>
+  (...args) => {
+    const breakpointCss = css(...args);
 
-  return css`
-    ${({ theme }) => theme.breakpoints.up(key)} {
-      ${breakpointCss};
-    }
-  `;
-};
+    return css`
+      ${({ theme }) => theme.breakpoints.up(key)} {
+        ${breakpointCss};
+      }
+    `;
+  };
 
-export const breakpointBetweenCss = (start, end) => (...args) => {
-  const breakpointCss = css(...args);
+export const breakpointBetweenCss =
+  (start, end) =>
+  (...args) => {
+    const breakpointCss = css(...args);
 
-  return css`
-    ${({ theme }) => theme.breakpoints.between(start, end)} {
-      ${breakpointCss};
-    }
-  `;
-};
+    return css`
+      ${({ theme }) => theme.breakpoints.between(start, end)} {
+        ${breakpointCss};
+      }
+    `;
+  };
 
 export const radiiCss = (value) => css`
   ${({ theme }) =>
