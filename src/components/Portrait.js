@@ -23,10 +23,10 @@ const ImageContainer = styled.div`
 const Portrait = ({ alt }) => {
   return (
     <ImageContainer>
-      <ImageBase alt={alt} src={require('../../public/portrait.jpeg')} />
+      <ImageBase alt={alt} src={require('../../public/portrait2.jpg')} />
       <ImageBase
         alt={alt}
-        src={require('../../public/portrait.jpeg?lqip')}
+        src={require('../../public/portrait2.jpg?lqip')}
         $placeholder
       />
     </ImageContainer>
